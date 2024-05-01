@@ -1,0 +1,5 @@
+- Add IP address to Mongo DB
+- run `npm install`
+- run `nodemon`
+- start project on live server
+- Admin is `agarwalanmol29@gmail.com/Anmol@123`
