@@ -1,13 +1,19 @@
 const ip = "localhost";
 const backend_url = `http://${ip}:5050`;
 
+const loggedInUser = localStorage.getItem("user");
+const user = JSON.parse(loggedInUser);
+
 const patientTable = document.getElementById("patient-list-table");
 
 async function fetchPatientList() {
-  const response = await fetch(`${backend_url}/get-patients`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `${backend_url}/get-doctor-patients/${user._id}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
   const data = await response.json();
   addRows(data);
 }
