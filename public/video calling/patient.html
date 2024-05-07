@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient's Video Calling Interface</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Patient's Video Calling Interface</h1>
+  <div class="video-container" id="videoContainer">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+  <div class="controls">
+    <button id="startCallButton">Start Call</button>
+    <button id="endCallButton">End Call</button>
+  </div>
+  <div class="link-input">
+    <label for="callLink">Video Call Link:</label>
+    <input type="text" id="callLink" placeholder="Enter doctor's video call link">
+    <button id="joinCallButton">Join Call</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

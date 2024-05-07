@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <style>
+    body {
+
+      width: 100px;
+      font-family: Arial, sans-serif;
+      background-image: url("https://specialistdirectinc.com/wp-content/uploads/2018/07/Image_1-1.jpeg");
+      background-size: 100%;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: inline;
+      top: 100px;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+
+    }
+
+    .login-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(25, 24, 24, 0.1);
+      padding: 20px;
+      width: 300px;
+      margin-left: 40px;
+      margin-top: 40px;
+      text-align: center;
+
+    }
+
+    .login-container h2 {
+      color: #333;
+    }
+
+    .login-form {
+      margin-top: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+
+
+    #container {
+      background-color: #fff;
+      margin-left: 30px;
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 4px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telemedicine Edit Doctor</title>
+  <script src="./admin.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <h1>Edit Doctor</h1>
+    <div id="error"></div>
+    <form id="edit-doctor-form">
+      <label for="firstName">Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="Area"> Speciality or Area of Expertise</label>
+      <input type="Area" id="area" name="Area" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Edit Doctor</button>
+    </form>
+    <a href="./doctor-list.html"><button>Back</button></a>
+  </div>
+
+  <script src="./edit-doctor.js" type="module"></script>
+
+</body>
+
+</html>

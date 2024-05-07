@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient's Prescription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .doctor-info {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="./appointment.html">Back</a>
+        <h1>Patient's Prescription</h1>
+
+        <div class="doctor-info">
+            <p>Date: <span id="date">January 1, 2024</span></p>
+            <p>Doctor: <span id="doctor">Dr. John Doe</span></p>
+            <p>Notes: <span id="notes"></span></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Medicine</th>
+                    <th>Timings</th>
+                </tr>
+            </thead>
+            <tbody id="medicines">
+            </tbody>
+        </table>
+    </div>
+    <script src="./prescription.js"></script>
+</body>
+
+</html>

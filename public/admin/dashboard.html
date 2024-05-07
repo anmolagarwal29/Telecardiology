@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            width: 100px;
+            font-family: Arial, sans-serif;
+            background-image: url("https://specialistdirectinc.com/wp-content/uploads/2018/07/Image_1-1.jpeg");
+            background-size: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard {
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .options a {
+            display: block;
+            padding: 20px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .options a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <div class="content">
+            <h1 style="color:#104dd1ac">ADMINISTRATOR</h1>
+            <div class="options">
+                <a href="./add-doctor.html">Add Doctor</a>
+                <a href="./doctor-list.html">Manage Doctors</a>
+                <a href="./patient-list.html">Patient List</a>
+                <a href="./appointment-list.html">Appointment Details</a>
+                <a href="./queries.html">Queries</a>
+                <a id="logout-button" href="#">Logout</a>
+                <!-- Add more options as needed -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../auth.js" type="module"></script>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Prescription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 150px);
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 30%;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .medicine-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .medicine-row label {
+            min-width: 120px
+        }
+
+
+        .timing-selects {
+            display: flex;
+            justify-content: space-between;
+            width: calc(30% * 2 + 20px);
+        }
+
+        .evening-select {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="./appointment.html">Back</a>
+        <h1>Doctor's Prescription</h1>
+        <div id="error"></div>
+        <form id="addPrescription">
+            <label for="doctorName">Doctor:</label>
+            <input type="text" id="doctorName" name="doctorName" value="Dr. Manisha" disabled>
+            <br />
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName" value="" disabled>
+            <br />
+            <br />
+
+            <label for="numMedicines">Number of Medicines:</label>
+            <input type="number" id="numMedicines" name="numMedicines" min="1" value="1"
+                onchange="generateMedicineInputs()">
+
+            <div id="medicineInputs">
+                <!-- Dynamically generated inputs will be placed here -->
+            </div>
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" placeholder="Any additional notes..."></textarea>
+
+            <input type="submit" value="Submit Prescription">
+        </form>
+    </div>
+    <script src="./add-prescription.js"></script>
+
+</body>
+
+</html>
