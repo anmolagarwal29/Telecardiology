@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="./dashboard.html">Back</a>
+	<h2>Patient List</h2>
+
+	<table id="patient-list-table">
+		<tr id="patient-list-table-heading">
+			<th>Name</th>
+			<th>Address</th>
+			<th>Email ID</th>
+			<th>Contact Detail</th>
+		</tr>
+	</table>
+	<script src="./patient-list.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arduino ECG Live Data</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            color: lime;
+        }
+        canvas {
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Arduino ECG Live Data</h1>
+    <canvas id="ecgChart"></canvas>
+    <script>
+        const socket = io();
+
+        const ctx = document.getElementById('ecgChart').getContext('2d');
+        const ecgChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'ECG Voltage',
+                    borderColor: 'lime',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    backgroundColor: 'rgba(0, 255, 0, 0.1)',
+                    lineTension: 0.2,
+                    data: []
+                }]
+            },
+            options: {
+                animation: {
+                    duration: 0 // Turn off animation
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time (ms)'
+                        },
+                        ticks: {
+                            autoSkip: true,
+                            maxTicksLimit: 20
+                        },
+                        gridLines: {
+                            color: 'rgba(0, 255, 0, 0.5)'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Voltage (mV)'
+                        },
+                        suggestedMin: -1.5,
+                        suggestedMax: 1.5,
+                        gridLines: {
+                            color: 'rgba(0, 255, 0, 0.5)'
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.0 // Straight lines for a more clinical ECG look
+                    }
+                }
+            }
+        });
+
+        let dataIndex = 0;
+        socket.on('arduinoData', function(msg) {
+            const dataPoint = parseFloat(msg.data);
+            if (!isNaN(dataPoint)) {
+                if (ecgChart.data.labels.length > 1000) {  // Adjust for a higher number of data points if needed
+                    ecgChart.data.labels.shift();
+                    ecgChart.data.datasets[0].data.shift();
+                }
+                ecgChart.data.labels.push(dataIndex++); // Increment dataIndex for each data point
+                ecgChart.data.datasets[0].data.push(dataPoint);
+                ecgChart.update('none'); // Update without animation
+            }
+        });
+    </script>
+</body>
+</html>
